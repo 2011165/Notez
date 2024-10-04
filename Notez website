@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notez - Your Music Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #5d59ee;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            transform: scale(0.98); /* Zoom out slightly */
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .content {
+            margin-left: 0;
+            width: 100%;
+            padding: 50px;
+            transition: margin-left 0.3s;
+        }
+
+        .header {
+            padding: 30px 0;
+            border-bottom: 3px solid #5d59ee;
+            text-align: center;
+            color: #5d59ee;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 2.5em; /* Shrink title */
+            margin: 0;
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .section {
+            margin-bottom: 100px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.3em;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: justify;
+            padding: 0 20px;
+        }
+
+        .privacy-link {
+            margin-top: 20px;
+            color: #5d59ee;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            color: #5d59ee;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        /* Animation for section appearing */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Error message styling */
+        .error-message {
+            color: red;
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        .event-section {
+            text-align: center;
+        }
+
+        .event {
+            background-color: #2a2a2a;
+            padding: 20px;
+            margin-bottom: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .event h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .event p {
+            font-size: 1.2em;
+        }
+
+        /* Private Policy styling */
+        .private-policy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content" id="content">
+        <div class="header">
+            <h1>Notez<br>Your Music Hub</h1>
+        </div>
+
+        <!-- Welcome Section -->
+        <div class="section fade-in" id="home">
+            <h2>Welcome to Notez</h2>
+            <div class="about-content">
+                <p>Notez is your complete platform for learning and teaching musical instruments. Our unique platform allows users to sign up as teachers or learners, focusing on live video lessons tailored to individual needs. Whether you're a beginner or an advanced musician, Notez helps you connect with professional instructors who guide you step-by-step. Lessons are interactive, and both teachers and students can share resources, sheet music, and notes.</p>
+                <p>The platform integrates scheduling features with a built-in calendar and reminders for upcoming lessons, so you never miss a session. As a learner, you can also submit practice recordings for instant feedback from your teacher, helping you to improve in real-time. Teachers can track student progress, and learners can monitor their development with ease.</p>
+                <p>Additionally, Notez offers a vast library of musical resources. Students can access tutorials, video lessons, and sheet music at any time. Whether you are interested in learning the piano, guitar, ukulele, or any other instrument, Notez has you covered. We also foster a community of music enthusiasts where teachers and learners can share insights, discuss techniques, and grow together. Experience learning music in a way that is accessible, personalized, and fun!</p>
+            </div>
+        </div>
+
+        <!-- Events Section -->
+        <div class="section fade-in" id="events">
+            <h2>Upcoming Events</h2>
+            <div class="event-section">
+                <div class="event">
+                    <h3>Notez Launch Event</h3>
+                    <p>Join us for the official release of Notez, the ultimate platform for music lovers! Celebrate with us on <strong>Release Date: Unknown</strong>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Merchandise Section -->
+        <div class="section" id="merch">
+            <h2>Merchandise</h2>
+            <div class="merch-container" id="merch-container">
+                <div class="error-message" id="merch-error">Error: Products could not be loaded</div>
+            </div>
+        </div>
+
+        <!-- Private Policy Section -->
+        <div class="section fade-in" id="privacy">
+            <h2>Privacy Policy</h2>
+            <div class="private-policy-content">
+                <p>At Notez, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our platform.</p>
+                <p><strong>Information Collection:</strong> We may collect personal data like your name, email address, and payment information when you sign up for an account, make purchases, or interact with the platform. Your personal data is stored securely and only accessible by authorized personnel.</p>
+                <p><strong>Data Usage:</strong> Your data is used solely to improve your experience on our platform, provide services, and communicate with you regarding updates or promotions. We do not sell or share your information with third-party companies without your consent.</p>
+                <p><strong>Data Security:</strong> Your privacy is of utmost importance to us. We use industry-standard encryption and security practices to protect your information from unauthorized access. However, please be aware that no method of transmission over the internet or electronic storage is completely secure.</p>
+                <p><strong>Copyright:</strong> Any unauthorized copying, distribution, or use of the content on our platform is strictly prohibited and will be dealt with under applicable laws.</p>
+                <p>If you have any questions regarding this Privacy Policy or our data security practices, feel free to contact us.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Notez. All rights reserved.</p>
+            <p>If you are having trouble, please contact: oregonborn2011@gmail.com</p>
+        </footer>
+    </div>
+
+    <script>
+        function handleScrollAnimations() {
+            const sections = document.querySelectorAll('.fade-in');
+            const triggerBottom = window.innerHeight / 5 * 4;
+
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+
+                if (sectionTop < triggerBottom) {
+                    section.classList.add('appear');
+                } else {
+                    section.classList.remove('appear');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScrollAnimations);
+        handleScrollAnimations();  // Trigger animations on page load if elements are in view
+    </script>
+</body>
+
+</html>
